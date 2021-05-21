@@ -41,8 +41,8 @@ public class InstaUnfollowersList
 	
 	public void Login() throws InterruptedException
 	{
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("santosh_0311");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Santoshvenki5");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("your_username");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("your_password");
 		driver.findElement(By.xpath("//button/div[text()='Log In']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@data-testid='user-avatar']")).click();
@@ -95,7 +95,7 @@ public class InstaUnfollowersList
 	
 	public void writeExcel() throws IOException
 	{
-		FileInputStream fin=new FileInputStream("C:\\Users\\SANTOSH\\Desktop\\cts\\InstaUsers.xlsx");
+		FileInputStream fin=new FileInputStream("path_to_excel_file");
 		XSSFWorkbook wb=new XSSFWorkbook(fin);
 		XSSFSheet ws=wb.getSheet("Sheet1");
 		
@@ -115,7 +115,7 @@ public class InstaUnfollowersList
 			}
 		}
 		
-		FileOutputStream fout=new FileOutputStream("C:\\Users\\SANTOSH\\Desktop\\cts\\InstaUsers.xlsx");
+		FileOutputStream fout=new FileOutputStream("path_to_excel_file");
 		wb.write(fout);
 		
 		fin.close();
